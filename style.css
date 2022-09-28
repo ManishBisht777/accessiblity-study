@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Epilogue", "sans-serif";
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background: hsl(0deg, 0%, 95%);
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 2rem;
+  justify-content: space-between;
+  gap: 2rem;
+  text-transform: capitalize;
+  font-size: 1rem;
+}
+nav .logo {
+  max-width: 10%;
+  display: flex;
+}
+nav .logo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+nav .navlinks {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  align-items: center;
+}
+nav .navlinks ul {
+  display: flex;
+  gap: 1.5rem;
+}
+nav .navlinks ul li {
+  list-style: none;
+  position: relative;
+}
+nav .navlinks ul li .select-box {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 0.5rem;
+}
+nav .navlinks ul li .select-box:hover .option-box {
+  display: flex;
+}
+nav .navlinks ul li .select-box:focus .select-img {
+  transform: rotate(180deg);
+  transition: 0.3s ease-in-out;
+}
+nav .navlinks ul li .select-box:focus .option-box {
+  display: flex;
+}
+nav .navlinks ul li .select-box p {
+  border: none;
+  max-width: 5rem;
+  background: hsl(0deg, 0%, 95%);
+  color: hsl(0deg, 0%, 41%);
+  cursor: pointer;
+  font-size: 1rem;
+}
+nav .navlinks ul li .select-box p:focus {
+  color: hsl(0deg, 0%, 8%);
+}
+nav .navlinks ul li .select-box p:hover {
+  color: hsl(0deg, 0%, 8%);
+}
+nav .navlinks ul li .select-box p::-moz-placeholder {
+  color: hsl(0deg, 0%, 8%);
+  text-transform: capitalize;
+  font-weight: 500;
+}
+nav .navlinks ul li .select-box p:-ms-input-placeholder {
+  color: hsl(0deg, 0%, 8%);
+  text-transform: capitalize;
+  font-weight: 500;
+}
+nav .navlinks ul li .select-box p::placeholder {
+  color: hsl(0deg, 0%, 8%);
+  text-transform: capitalize;
+  font-weight: 500;
+}
+nav .navlinks ul li .option-box {
+  position: absolute;
+  top: 3rem;
+  left: -3rem;
+  padding: 1.5rem;
+  border-radius: 0.6rem;
+  background: rgb(255, 255, 255);
+  gap: 0.8rem;
+  display: none;
+  flex-direction: column;
+}
+nav .navlinks ul li .option-box .option a {
+  display: flex;
+  gap: 1rem;
+  color: hsl(0deg, 0%, 41%);
+  font-size: 0.9rem;
+}
+nav .navlinks ul li .option-box .option a:hover {
+  color: hsl(0deg, 0%, 8%);
+}
+nav .navlinks ul li a {
+  color: hsl(0deg, 0%, 41%);
+}
+nav .navlinks ul li a:hover {
+  color: hsl(0deg, 0%, 8%);
+}
+nav .navlinks .auth {
+  display: flex;
+  gap: 1rem;
+}
+nav .navlinks .auth button {
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.6rem;
+  background: hsl(0deg, 0%, 95%);
+  cursor: pointer;
+}
+nav .navlinks .auth :nth-child(2) {
+  border: 2px solid hsl(0deg, 0%, 8%);
+  background: hsl(0deg, 0%, 95%);
+}
+nav .hamburger {
+  display: none;
+}/*# sourceMappingURL=style.css.map */
