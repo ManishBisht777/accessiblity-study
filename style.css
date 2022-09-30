@@ -13,8 +13,23 @@ a {
   text-decoration: none;
 }
 
+button {
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.6rem;
+  background: hsl(0deg, 0%, 95%);
+  cursor: pointer;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+
 body {
   background: hsl(0deg, 0%, 95%);
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 nav {
@@ -25,6 +40,7 @@ nav {
   justify-content: space-between;
   gap: 2rem;
   text-transform: capitalize;
+  position: relative;
   font-size: 1rem;
 }
 nav .logo {
@@ -43,6 +59,9 @@ nav .navlinks {
   width: 90%;
   align-items: center;
 }
+nav .navlinks .closeicon {
+  display: none;
+}
 nav .navlinks ul {
   display: flex;
   gap: 1.5rem;
@@ -57,9 +76,6 @@ nav .navlinks ul li .select-box {
   cursor: pointer;
   gap: 0.5rem;
 }
-nav .navlinks ul li .select-box:hover .option-box {
-  display: flex;
-}
 nav .navlinks ul li .select-box:focus .select-img {
   transform: rotate(180deg);
   transition: 0.3s ease-in-out;
@@ -67,31 +83,33 @@ nav .navlinks ul li .select-box:focus .select-img {
 nav .navlinks ul li .select-box:focus .option-box {
   display: flex;
 }
-nav .navlinks ul li .select-box p {
+nav .navlinks ul li .select-box article {
   border: none;
+  display: flex;
+  gap: 0.5rem;
   max-width: 5rem;
   background: hsl(0deg, 0%, 95%);
   color: hsl(0deg, 0%, 41%);
   cursor: pointer;
   font-size: 1rem;
 }
-nav .navlinks ul li .select-box p:focus {
+nav .navlinks ul li .select-box article:focus {
   color: hsl(0deg, 0%, 8%);
 }
-nav .navlinks ul li .select-box p:hover {
+nav .navlinks ul li .select-box article:hover {
   color: hsl(0deg, 0%, 8%);
 }
-nav .navlinks ul li .select-box p::-moz-placeholder {
-  color: hsl(0deg, 0%, 8%);
-  text-transform: capitalize;
-  font-weight: 500;
-}
-nav .navlinks ul li .select-box p:-ms-input-placeholder {
+nav .navlinks ul li .select-box article::-moz-placeholder {
   color: hsl(0deg, 0%, 8%);
   text-transform: capitalize;
   font-weight: 500;
 }
-nav .navlinks ul li .select-box p::placeholder {
+nav .navlinks ul li .select-box article:-ms-input-placeholder {
+  color: hsl(0deg, 0%, 8%);
+  text-transform: capitalize;
+  font-weight: 500;
+}
+nav .navlinks ul li .select-box article::placeholder {
   color: hsl(0deg, 0%, 8%);
   text-transform: capitalize;
   font-weight: 500;
@@ -127,11 +145,7 @@ nav .navlinks .auth {
   gap: 1rem;
 }
 nav .navlinks .auth button {
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 0.6rem;
   background: hsl(0deg, 0%, 95%);
-  cursor: pointer;
 }
 nav .navlinks .auth :nth-child(2) {
   border: 2px solid hsl(0deg, 0%, 8%);
@@ -139,4 +153,146 @@ nav .navlinks .auth :nth-child(2) {
 }
 nav .hamburger {
   display: none;
+}
+
+.home {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+.home .homeinfo {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.home .homeinfo h1 {
+  font-size: 5.1rem;
+  font-weight: 700;
+  color: hsl(0deg, 0%, 8%);
+}
+.home .homeinfo p {
+  font-size: 0.9rem;
+  color: hsl(0deg, 0%, 41%);
+  width: 75%;
+  text-transform: capitalize;
+  line-height: 1.5rem;
+  letter-spacing: 0.02rem;
+}
+.home .homeinfo button {
+  border: 1px solid hsl(0deg, 0%, 8%);
+  padding: 0.75rem 1.25rem;
+  background: hsl(0deg, 0%, 8%);
+  color: hsl(0deg, 0%, 95%);
+}
+.home .homeinfo button:hover {
+  background: hsl(0deg, 0%, 95%);
+  color: hsl(0deg, 0%, 8%);
+}
+.home .homeinfo .sponser-box {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+}
+.home .homeinfo .sponser-box .sponser {
+  width: 15%;
+}
+.home .homeinfo .sponser-box .sponser img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.home .homeimg {
+  width: 25%;
+}
+.home .homeimg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+@media screen and (max-width: 768px) {
+  .navlinks {
+    position: absolute;
+    right: -200vh;
+    background: #fff;
+    width: 100%;
+    min-height: 100vh;
+    top: 0;
+    flex-direction: column;
+    justify-content: center !important;
+    align-items: center;
+    gap: 2rem;
+  }
+  .navlinks ul {
+    flex-direction: column;
+  }
+  .navlinks ul li {
+    background: white;
+  }
+  .navlinks ul li .select-box {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+  .navlinks ul li .select-box article {
+    background: #fff !important;
+  }
+  .navlinks ul li .select-box .option-box {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  .navlinks .auth {
+    flex-direction: column;
+    align-items: center;
+    color: hsl(0deg, 0%, 41%);
+  }
+  .navlinks .auth button {
+    background: #fff !important;
+    color: hsl(0deg, 0%, 41%) !important;
+  }
+  .navlinks .auth :nth-child(2) {
+    border: 1px solid hsl(0deg, 0%, 41%) !important;
+  }
+  .navopen {
+    right: 0;
+  }
+  .navopen .closeicon {
+    display: flex !important;
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+    cursor: pointer;
+  }
+  .hamburger {
+    display: flex !important;
+  }
+  .home {
+    flex-direction: column-reverse;
+    gap: 2rem;
+    padding: 2rem;
+  }
+  .home .homeinfo {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+  .home .homeinfo h1 {
+    font-size: 1.5rem;
+  }
+  .home .homeinfo article {
+    width: 100%;
+    font-size: 0.8rem;
+    line-height: 1rem;
+  }
+  .home .homeinfo .sponser-box {
+    justify-content: center;
+  }
+  .home .homeimg {
+    width: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -17,8 +17,21 @@ a {
   text-decoration: none;
 }
 
+button {
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.6rem;
+  background: $white;
+  cursor: pointer;
+  width: fit-content;
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+
 body {
   background: $white;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 nav {
@@ -29,6 +42,7 @@ nav {
   justify-content: space-between;
   gap: 2rem;
   text-transform: capitalize;
+  position: relative;
   font-size: 1rem;
 
   .logo {
@@ -47,6 +61,10 @@ nav {
     width: 90%;
     align-items: center;
 
+    .closeicon {
+      display: none;
+    }
+
     ul {
       display: flex;
       gap: 1.5rem;
@@ -60,11 +78,6 @@ nav {
           cursor: pointer;
           gap: 0.5rem;
 
-          &:hover {
-            .option-box {
-              display: flex;
-            }
-          }
           &:focus {
             .select-img {
               transform: rotate(180deg);
@@ -76,8 +89,10 @@ nav {
             }
           }
 
-          p {
+          article {
             border: none;
+            display: flex;
+            gap: 0.5rem;
             max-width: 5rem;
             background: $white;
             color: $gray;
@@ -134,12 +149,9 @@ nav {
     .auth {
       display: flex;
       gap: 1rem;
+
       button {
-        border: none;
-        padding: 0.5rem 1rem;
-        border-radius: 0.6rem;
         background: $white;
-        cursor: pointer;
       }
 
       :nth-child(2) {
@@ -151,5 +163,161 @@ nav {
 
   .hamburger {
     display: none;
+  }
+}
+
+.home {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+
+  .homeinfo {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    h1 {
+      font-size: 5.1rem;
+      font-weight: 700;
+      color: $black;
+    }
+    p {
+      font-size: 0.9rem;
+      color: $gray;
+      width: 75%;
+      text-transform: capitalize;
+      line-height: 1.5rem;
+      letter-spacing: 0.02rem;
+    }
+
+    button {
+      border: 1px solid $black;
+      padding: 0.75rem 1.25rem;
+      background: $black;
+      color: $white;
+
+      &:hover {
+        background: $white;
+        color: $black;
+      }
+    }
+
+    .sponser-box {
+      display: flex;
+      gap: 2rem;
+      width: 100%;
+
+      .sponser {
+        width: 15%;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+
+  .homeimg {
+    width: 25%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navlinks {
+    position: absolute;
+    right: -200vh;
+    background: #fff;
+    width: 100%;
+    min-height: 100vh;
+    top: 0;
+    flex-direction: column;
+    justify-content: center !important;
+    align-items: center;
+    gap: 2rem;
+    ul {
+      flex-direction: column;
+      li {
+        background: white;
+        .select-box {
+          flex-direction: column;
+          align-items: flex-start !important;
+          article {
+            background: #fff !important;
+          }
+          .option-box {
+            position: relative;
+            top: 0;
+            left: 0;
+          }
+        }
+      }
+    }
+
+    .auth {
+      flex-direction: column;
+      align-items: center;
+      color: $gray;
+
+      button {
+        background: #fff !important;
+        color: $gray !important;
+      }
+      :nth-child(2) {
+        border: 1px solid $gray !important;
+      }
+    }
+  }
+
+  .navopen {
+    right: 0;
+
+    .closeicon {
+      display: flex !important;
+      position: absolute;
+      top: 3rem;
+      right: 3rem;
+      cursor: pointer;
+    }
+  }
+
+  .hamburger {
+    display: flex !important;
+  }
+  .home {
+    flex-direction: column-reverse;
+    gap: 2rem;
+    padding: 2rem;
+
+    .homeinfo {
+      width: 100%;
+      align-items: center;
+      text-align: center;
+
+      h1 {
+        font-size: 1.5rem;
+      }
+      article {
+        width: 100%;
+        font-size: 0.8rem;
+        line-height: 1rem;
+      }
+
+      .sponser-box {
+        justify-content: center;
+      }
+    }
+
+    .homeimg {
+      width: 100%;
+    }
   }
 }
