@@ -2,6 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  background: hsl(0deg, 0%, 95%);
+  font-size: 1rem;
   font-family: "Epilogue", "sans-serif";
 }
 
@@ -11,148 +16,124 @@ li {
 
 a {
   text-decoration: none;
+  color: hsl(0deg, 0%, 41%);
 }
 
 button {
+  background: transparent;
   border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 0.6rem;
-  background: hsl(0deg, 0%, 95%);
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  font-size: 1rem;
+  border-radius: 0.75rem;
   text-transform: capitalize;
-}
-
-body {
-  background: hsl(0deg, 0%, 95%);
-  min-height: 100vh;
-  overflow-x: hidden;
+  font: initial;
 }
 
 nav {
   display: flex;
   width: 100%;
-  align-items: center;
   padding: 2rem;
   justify-content: space-between;
   gap: 2rem;
   text-transform: capitalize;
   position: relative;
-  font-size: 1rem;
+  text-transform: capitalize;
+  align-items: center;
 }
 nav .logo {
-  max-width: 10%;
   display: flex;
+  align-items: flex-start;
+  margin-right: 2rem;
 }
 nav .logo img {
   width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
-nav .navlinks {
-  display: flex;
-  justify-content: space-between;
-  width: 90%;
-  align-items: center;
-}
-nav .navlinks .closeicon {
+nav .closeicon {
   display: none;
-}
-nav .navlinks ul {
-  display: flex;
-  gap: 1.5rem;
-}
-nav .navlinks ul li {
-  list-style: none;
-  position: relative;
-}
-nav .navlinks ul li .select-box {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  gap: 0.5rem;
-}
-nav .navlinks ul li .select-box:focus .select-img {
-  transform: rotate(180deg);
-  transition: 0.3s ease-in-out;
-}
-nav .navlinks ul li .select-box:focus .option-box {
-  display: flex;
-}
-nav .navlinks ul li .select-box article {
-  border: none;
-  display: flex;
-  gap: 0.5rem;
-  max-width: 5rem;
-  background: hsl(0deg, 0%, 95%);
-  color: hsl(0deg, 0%, 41%);
-  cursor: pointer;
-  font-size: 1rem;
-}
-nav .navlinks ul li .select-box article:focus {
-  color: hsl(0deg, 0%, 8%);
-}
-nav .navlinks ul li .select-box article:hover {
-  color: hsl(0deg, 0%, 8%);
-}
-nav .navlinks ul li .select-box article::-moz-placeholder {
-  color: hsl(0deg, 0%, 8%);
-  text-transform: capitalize;
-  font-weight: 500;
-}
-nav .navlinks ul li .select-box article:-ms-input-placeholder {
-  color: hsl(0deg, 0%, 8%);
-  text-transform: capitalize;
-  font-weight: 500;
-}
-nav .navlinks ul li .select-box article::placeholder {
-  color: hsl(0deg, 0%, 8%);
-  text-transform: capitalize;
-  font-weight: 500;
-}
-nav .navlinks ul li .option-box {
-  position: absolute;
-  top: 3rem;
-  left: -3rem;
-  padding: 1.5rem;
-  border-radius: 0.6rem;
-  background: rgb(255, 255, 255);
-  gap: 0.8rem;
-  display: none;
-  flex-direction: column;
-}
-nav .navlinks ul li .option-box .option a {
-  display: flex;
-  gap: 1rem;
-  color: hsl(0deg, 0%, 41%);
-  font-size: 0.9rem;
-}
-nav .navlinks ul li .option-box .option a:hover {
-  color: hsl(0deg, 0%, 8%);
-}
-nav .navlinks ul li a {
-  color: hsl(0deg, 0%, 41%);
-}
-nav .navlinks ul li a:hover {
-  color: hsl(0deg, 0%, 8%);
-}
-nav .navlinks .auth {
-  display: flex;
-  gap: 1rem;
-}
-nav .navlinks .auth button {
-  background: hsl(0deg, 0%, 95%);
-}
-nav .navlinks .auth :nth-child(2) {
-  border: 2px solid hsl(0deg, 0%, 8%);
-  background: hsl(0deg, 0%, 95%);
 }
 nav .hamburger {
   display: none;
+}
+nav .navlinks {
+  display: flex;
+  flex-grow: 1;
+}
+nav .select-img {
+  display: flex;
+  align-items: center;
+}
+nav .select-img img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+nav .menu-links {
+  display: flex;
+  gap: 1.5rem;
+  position: relative;
+}
+nav .menu-links li {
+  display: flex;
+  align-items: center;
+}
+nav .menu-links button {
+  font-size: 1rem;
+  font-weight: 500;
+  color: hsl(0deg, 0%, 41%);
+  transition: all 0.3s ease-in-out;
+  font-family: "Epilogue", "sans-serif";
+}
+nav .menu-links button:hover {
+  color: hsl(0deg, 0%, 8%);
+}
+nav .menu-links button[aria-expanded=true] {
+  color: hsl(0deg, 0%, 8%);
+}
+nav .menu-links button[aria-expanded=true] + .menu-items {
+  display: flex;
+}
+nav .main-nav {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+nav .menu-items {
+  background: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 2.5rem;
+  left: -5rem;
+}
+nav .menu-items a {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+}
+nav .auth {
+  display: flex;
+  gap: 1rem;
+}
+nav .auth a {
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+nav .auth :nth-child(2) {
+  border: 2px solid hsl(0deg, 0%, 41%);
 }
 
 .home {
@@ -161,7 +142,6 @@ nav .hamburger {
   justify-content: center;
   align-items: center;
   gap: 5rem;
-  overflow-x: hidden;
 }
 .home .homeinfo {
   width: 40%;
@@ -184,9 +164,9 @@ nav .hamburger {
 }
 .home .homeinfo button {
   border: 1px solid hsl(0deg, 0%, 8%);
-  padding: 0.75rem 1.25rem;
   background: hsl(0deg, 0%, 8%);
   color: hsl(0deg, 0%, 95%);
+  padding: 0.75rem 1.25rem;
 }
 .home .homeinfo button:hover {
   background: hsl(0deg, 0%, 95%);
@@ -219,61 +199,6 @@ nav .hamburger {
 @media screen and (max-width: 768px) {
   .logo {
     max-width: 20% !important;
-  }
-  .navlinks {
-    position: absolute;
-    right: -200vh;
-    background: #fff;
-    width: 100%;
-    min-height: 100vh;
-    top: 0;
-    flex-direction: column;
-    justify-content: center !important;
-    align-items: center;
-    gap: 2rem;
-  }
-  .navlinks ul {
-    flex-direction: column;
-  }
-  .navlinks ul li {
-    background: white;
-  }
-  .navlinks ul li .select-box {
-    flex-direction: column;
-    align-items: flex-start !important;
-  }
-  .navlinks ul li .select-box article {
-    background: #fff !important;
-  }
-  .navlinks ul li .select-box .option-box {
-    position: relative;
-    top: 0;
-    left: 0;
-  }
-  .navlinks .auth {
-    flex-direction: column;
-    align-items: center;
-    color: hsl(0deg, 0%, 41%);
-  }
-  .navlinks .auth button {
-    background: #fff !important;
-    color: hsl(0deg, 0%, 41%) !important;
-  }
-  .navlinks .auth :nth-child(2) {
-    border: 1px solid hsl(0deg, 0%, 41%) !important;
-  }
-  .navopen {
-    right: 0;
-  }
-  .navopen .closeicon {
-    display: flex !important;
-    position: absolute;
-    top: 3rem;
-    right: 3rem;
-    cursor: pointer;
-  }
-  .hamburger {
-    display: flex !important;
   }
   .home {
     flex-direction: column-reverse;

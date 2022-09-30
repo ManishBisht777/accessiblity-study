@@ -26,91 +26,97 @@
           <img src="./images/logo.svg" alt="logo" />
         </div>
         <div class="navlinks" id="nav">
-          <div class="closeicon" onclick="togglenav()">
+          <button class="closeicon" onclick="togglenav()">
             <img src="./images/icon-close-menu.svg" alt="icon-close-menu" />
-          </div>
-          <ul>
-            <li>
-              <div class="select-box" tabindex="0">
-                <article>
-                  Features
+          </button>
+          <ul class="main-nav">
+            <div class="menu-links">
+              <li>
+                <button
+                  aria-expanded="false"
+                  id="togglearia"
+                  onclick="togglearia()"
+                >
+                  Feature
                   <div class="select-img">
-                    <img src="./images/icon-arrow-down.svg" alt="" />
+                    <img
+                      src="./images/icon-arrow-down.svg"
+                      alt="icon-arrow-down"
+                    />
                   </div>
-                </article>
-
-                <div class="option-box">
-                  <div class="option">
+                </button>
+                <ul class="menu-items">
+                  <li>
                     <a href="#">
-                      <div class="option-img">
+                      <div class="list-img">
                         <img src="./images/icon-todo.svg" alt="icon-todo" />
                       </div>
-                      todo list
+                      Todos
                     </a>
-                  </div>
-                  <div class="option">
+                  </li>
+                  <li>
                     <a href="#">
-                      <div class="option-img">
+                      <div class="list-img">
+                        <img src="./images/icon-planning.svg" alt="icon-todo" />
+                      </div>
+                      planning
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="list-img">
                         <img
                           src="./images/icon-reminders.svg"
                           alt="icon-todo"
                         />
                       </div>
-                      reminders
+                      reminder
                     </a>
-                  </div>
-                  <div class="option">
+                  </li>
+                  <li>
                     <a href="#">
-                      <div class="option-img">
-                        <img src="./images/icon-planning.svg" alt="icon-todo" />
-                      </div>
-                      planning
-                    </a>
-                  </div>
-                  <div class="option">
-                    <a href="#">
-                      <div class="option-img">
+                      <div class="list-img">
                         <img src="./images/icon-calendar.svg" alt="icon-todo" />
                       </div>
                       calender
                     </a>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="select-box" tabindex="0">
-                <article>
-                  Company
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <button aria-expanded="false" id="togglearia2">
+                  company
                   <div class="select-img">
-                    <img src="./images/icon-arrow-down.svg" alt="" />
+                    <img
+                      src="./images/icon-arrow-down.svg"
+                      alt="icon-arrow-down"
+                    />
                   </div>
-                </article>
-
-                <div class="option-box">
-                  <div class="option">
-                    <a href="#"> History </a>
-                  </div>
-                  <div class="option">
-                    <a href="#"> Our team </a>
-                  </div>
-                  <div class="option">
+                </button>
+                <ul class="menu-items">
+                  <li>
+                    <a href="#"> history </a>
+                  </li>
+                  <li>
+                    <a href="#"> our team </a>
+                  </li>
+                  <li>
                     <a href="#"> blog </a>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <a href="#">Carrees</a>
-            </li>
-            <li>
-              <a href="#">about</a>
-            </li>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Carrees</a>
+              </li>
+              <li>
+                <a href="#">about</a>
+              </li>
+            </div>
+            <div class="auth">
+              <a href="#">Login</a>
+              <a href="#">Register</a>
+            </div>
           </ul>
-          <div class="auth">
-            <button>Login</button>
-            <button>Register</button>
-          </div>
         </div>
         <div class="hamburger">
           <button onclick="togglenav()" id="togglebtn">
@@ -157,11 +163,16 @@
     </main>
 
     <script>
-      function togglenav() {
-        const togglebtn = document.getElementById("togglebtn");
-        const navlinks = document.getElementById("nav");
+      function togglearia() {
+        var ariaStatus = document
+          .getElementById("togglearia")
+          .getAttribute("aria-expanded");
+        if (ariaStatus == true) ariaStatus = "false";
+        else ariaStatus = "true";
 
-        navlinks.classList.toggle("navopen");
+        document
+          .getElementById("togglearia")
+          .setAttribute("aria-expanded", ariaStatus);
       }
     </script>
   </body>
