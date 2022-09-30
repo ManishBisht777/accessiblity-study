@@ -172,6 +172,7 @@ nav {
   justify-content: center;
   align-items: center;
   gap: 5rem;
+  overflow-x: hidden;
 
   .homeinfo {
     width: 40%;
@@ -232,6 +233,10 @@ nav {
 }
 
 @media screen and (max-width: 768px) {
+  .logo {
+    max-width: 20% !important;
+  }
+
   .navlinks {
     position: absolute;
     right: -200vh;
